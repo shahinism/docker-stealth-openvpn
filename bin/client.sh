@@ -9,7 +9,7 @@ if [ "$USERNAME" = "" ]; then
     exit 1
 fi
 
-mdkir -p $CLIENTS_DIR
+mkdir -p $CLIENTS_DIR
 
 docker-compose run --rm openvpn easyrsa build-client-full "$USERNAME" nopass
 docker-compose run --rm openvpn ovpn_getclient "$USERNAME" > "$CLIENTS_DIR/$USERNAME".ovpn
