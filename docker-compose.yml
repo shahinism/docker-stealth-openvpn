@@ -1,0 +1,20 @@
+openvpn:
+  image: kylemanna/openvpn
+  volumes:
+    - ./ovpn-data-store:/etc/openvpn
+  cap_add:
+    - NET_ADMIN
+  restart: always
+
+stunnel:
+  image: shahinism/stunnel
+  ports:
+    - "993:4911"
+  links:
+    - openvpn
+  environment:
+    - CLIENT=no
+    - SERVICE=openvpn
+    - ACCEPT=0.0.0.0:4911
+    - CONNECT=openvpn:1194
+  restart: always
