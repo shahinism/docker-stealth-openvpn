@@ -4,6 +4,9 @@
 # @file
 # @version 0.1
 
+start:
+	docker-compose up -d
+
 init:
 	bin/init.sh
 
