@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 PUBLIC_IP=$(curl -s https://ipinfo.io/ip)
 
 printf "This server's public address [%s]: " "$PUBLIC_IP"

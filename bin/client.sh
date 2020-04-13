@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 CLIENTS_DIR="./clients"
 printf "Username: "
 read -r USERNAME
