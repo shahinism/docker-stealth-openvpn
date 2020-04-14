@@ -6,7 +6,7 @@ set -e
 . "${BASH_SOURCE%/*}/common.sh"
 
 STUNNEL_CONF_PATH="./stunnel.conf"
-success "+ Initializing OpenVPN config..."
+info "+ Initializing OpenVPN config..."
 
 PUBLIC_IP=$(curl -s https://ipinfo.io/ip)
 printf "This server's public address [%s]: " "$PUBLIC_IP"
@@ -17,7 +17,7 @@ docker-compose run --rm openvpn ovpn_genconfig  -C "AES-256-CBC" -a "SHA384" -u 
 docker-compose run --rm openvpn ovpn_initpki
 
 success "+ OpenVPN configuration succeeded"
-success "+ Initializing stunnel config for clients..."
+info "+ Initializing stunnel config for clients..."
 
 cat > "$STUNNEL_CONF_PATH" << _EOF_
 client = yes
