@@ -5,3 +5,4 @@ tmp/
 
 ovpn-data-store
 clients
+stunnel.conf
