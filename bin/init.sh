@@ -2,18 +2,10 @@
 
 set -e
 
+# shellcheck source=./common.sh
+. "${BASH_SOURCE%/*}/common.sh"
+
 STUNNEL_CONF_PATH="./stunnel.conf"
-GREEN='\033[0;32m'
-NC='\033[0m'
-
-function message {
-    echo -e "${1}${2}${NC}"
-}
-
-function success {
-    message "$GREEN" "$1"
-}
-
 success "+ Initializing OpenVPN config..."
 
 PUBLIC_IP=$(curl -s https://ipinfo.io/ip)
