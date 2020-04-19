@@ -20,6 +20,7 @@ docker-compose run --rm openvpn ovpn_genconfig  -C "AES-256-CBC" -a "SHA384" -u 
 docker-compose run --rm openvpn ovpn_initpki
 
 cat >> "$OVPN_CONF_PATH" <<EOF
+push "verb 3"
 push "route ${ADDRESS} 255.255.255.255 net_gateway"
 EOF
 
