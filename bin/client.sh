@@ -9,7 +9,7 @@ printf "Username: "
 read -r USERNAME
 
 CONFIG_DIR="./clients"
-CONFIG_PATH="$CLIENTS_DIR/$USERNAME".ovpn
+CONFIG_PATH="${CONFIG_DIR}/${USERNAME}".ovpn
 
 if [ "$USERNAME" = "" ]; then
     echo "Username was empty"
