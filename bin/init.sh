@@ -5,7 +5,7 @@ set -e
 # shellcheck source=./common.sh
 . "${BASH_SOURCE%/*}/common.sh"
 
-OVPN_CONF_DIR="./ovpn-data-store/"
+OVPN_CONF_DIR="./ovpn-data-store"
 OVPN_CONF_PATH="${OVPN_CONF_DIR}/openvpn.conf"
 
 STUNNEL_CONF_PATH="./stunnel.conf"
